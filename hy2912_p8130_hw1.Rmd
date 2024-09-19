@@ -17,10 +17,11 @@ library(tidyverse)
 
 ## Installing penguin package
 
-You can also embed plots, for example:
-
-```{r df_create, echo=TRUE}
+```{r df_create, echo=FALSE}
 install.packages("palmerpenguins")
 ```
+## Loading penguin dataset
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r df_create, echo=FALSE}
+data("penguins", package = "palmerpenguins")
+```
