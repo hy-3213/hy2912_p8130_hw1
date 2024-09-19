@@ -21,9 +21,13 @@ data("penguins", package = "palmerpenguins")
 This data presents demographically relevant information for 344 samples of penguins between 2007-2009, including their bill length and depth, flipper length, body mass, and sex. This is organized in a 344 x 8 table and contains `r nrow(penguins)` rows and `r ncol(penguins)` columns. It measures 344 samples and 8 variables. The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm. 
 
 ```{r yx_scatter}
-ggplot (penguins, aes(x = bill_length_mm,  y = flipper_length_mm, color=species) + geom_point() 
+ggplot(penguins, aes(x = bill_length_mm,  y = flipper_length_mm, color=species)) + geom_point() 
 ```
 
-)
+
+## Problem 2
+```{r}
+samp = rnorm(10)
+length(samp)
 ```
 
