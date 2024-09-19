@@ -23,11 +23,16 @@ This data presents demographically relevant information for 344 samples of pengu
 ```{r yx_scatter}
 ggplot(penguins, aes(x = bill_length_mm,  y = flipper_length_mm, color=species)) + geom_point() 
 ```
+```{r}
+ggsave("scatter_plot.pdf", height = 4, width = 6)
+```
 
 
 ## Problem 2
 ```{r}
-samp = rnorm(10)
-length(samp)
+problem_df = tibble (
+  vec_numeric = rnorm(10), 
+  char_vec = c("a","b","c","d","e","f","g","h","i","j"),
+  fact_vec = factor(sample(c("Level 1", "Level 2", "Level3", 10)))
+   ) 
 ```
-
