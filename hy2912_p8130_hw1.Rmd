@@ -25,3 +25,7 @@ install.packages("palmerpenguins")
 ```{r df_create, echo=FALSE}
 data("penguins", package = "palmerpenguins")
 ```
+
+## Data Description 
+This data presents demographically relevant information for 344 samples of penguins between 2007-2009, including heir bill length and depth, flipper length, body mass, and sex. This is organized in a 344 x 8 table and contains `r nrow(penguin)` and `r ncol(penguin)`. It measures 344 samples and 8 variables. 
+
