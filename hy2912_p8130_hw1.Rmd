@@ -4,28 +4,16 @@ author: "Helen Yousaf"
 date: "2024-09-19"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Library Tidyverse
 
-```{r tidyverse, include=FALSE}
+```{r tidyverse, echo=FALSE}
 library(tidyverse)
 ```
 
-## Installing penguin package
+## Loading Penguins dataset
 
-```{r df_create, echo=FALSE}
-install.packages("palmerpenguins")
-```
-## Loading penguin dataset
-
-```{r df_create, echo=FALSE}
+```{r df_create}
 data("penguins", package = "palmerpenguins")
 ```
-
-## Data Description 
-This data presents demographically relevant information for 344 samples of penguins between 2007-2009, including heir bill length and depth, flipper length, body mass, and sex. This is organized in a 344 x 8 table and contains `r nrow(penguin)` and `r ncol(penguin)`. It measures 344 samples and 8 variables. 
-
+## Describing Penguins Data 
+This data presents demographically relevant information for 344 samples of penguins between 2007-2009, including their bill length and depth, flipper length, body mass, and sex. This is organized in a 344 x 8 table and contains `r nrow(penguins)` rows and `r ncol(penguins)` columns. It measures 344 samples and 8 variables. 
