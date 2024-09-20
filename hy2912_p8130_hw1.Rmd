@@ -22,6 +22,7 @@ This data presents demographically relevant information for 344 samples of pengu
 
 #### Making Scatter Plot
 Penguin Bill Length vs. Flipper Length Scatter Plot
+This code chunk creates a xy scatterplot of flipper_length_mm (y) vs bill_length_mm (x). Points are colored using the species variable. 
 ```{r yx_scatter, echo=TRUE, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm,  y = flipper_length_mm, color=species)) + geom_point() 
 ```
@@ -31,23 +32,29 @@ ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
 
 ## Problem 2
-This code will evaluate problem 2 of HW_1.
+This section will evaluate problem 2 of HW_1.
 
 #### Creating Dataframe for Problem 2
 The chunk below creates a dataframe containing a sample of size 10 from a 
-random normal variable, constructs the specified logical vector, takes the 
-absolute value of each element of that sample,and produces a histogram of 
-the absolute value. The code chunk also finds the median of the sample and
-stores it for easy in-line printing.
+random normal variable, constructs the specified logical vector indicating whether elements are greater than 0. The code chunk also creates a character vector of length 10 and 
+a factor vector of length 10, with 3 different factor “levels”. 
 ```{r}
-problem_df = tibble (
+problem_2_df = tibble (
   vec_numeric = rnorm(10), 
   vec_logi = vec_numeric> 0, 
   vec_char = sample (letters, 10),
   vec_fact = factor(sample(c( "Level 1", "Level 2", "Level 3", "Level 1", "Level 2", "Level 3", "Level 1", "Level 2", "Level 3", "Level 1")))
 )
 ```
+#### Mean of each variable 
+The code chunk finds the mean of each variable in the data frame to determine for which variable it works and doesn’t work.
 
+The mean of vec_numeric is `r mean(pull(problem_2_df, vec_numeric))`.
+The mean of vec_logi is `r mean(pull(problem_2_df, vec_logi))`.
+The mean of vec_char is `r mean(pull(problem_2_df, vec_char))`.
+The mean of vec_fact is `r mean(pull(problem_2_df, vec_fact))`.
+
+Given the qualitative nature of vec_char and vec_fact, determining the mean is not avaialble (NA). These two vectors represent nominal and ordinal categorical variables, respectively. 
 
   
   
