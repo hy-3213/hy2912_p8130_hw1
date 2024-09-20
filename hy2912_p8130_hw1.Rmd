@@ -5,34 +5,51 @@ date: "2024-09-19"
 output: html_document
 ---
 ## Problem I 
-## Library Tidyverse
+This is code will evaluate the problem 1 of HW_1.
 
+#### Library Tidyverse
 ```{r tidyverse, echo=FALSE}
 library(tidyverse)
 ```
 
-## Loading Penguins dataset
-
-```{r df_create}
+#### Loading Penguins dataset
+```{r penguin_df_create, echo=TRUE}
 data("penguins", package = "palmerpenguins")
 ```
 
-## Describing Penguins Data 
-This data presents demographically relevant information for 344 samples of penguins between 2007-2009, including their bill length and depth, flipper length, body mass, and sex. This is organized in a 344 x 8 table and contains `r nrow(penguins)` rows and `r ncol(penguins)` columns. It measures 344 samples and 8 variables. The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm. 
+#### Describing Penguins Data 
+This data presents demographically relevant information for 344 samples of penguins between 2007-2009, including their **bill length and depth**, **flipper length**, **body mass**, and **sex**. This is organized in a 344 x 8 table and contains `r nrow(penguins)` rows and `r ncol(penguins)` columns. It measures 344 samples and 8 variables. The **mean** flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm. 
 
-```{r yx_scatter}
+#### Making Scatter Plot
+Penguin Bill Length vs. Flipper Length Scatter Plot
+```{r yx_scatter, echo=TRUE, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm,  y = flipper_length_mm, color=species)) + geom_point() 
 ```
-```{r}
+##### Exporting Scatter Plot
+```{r ggsave, echo=TRUE, warning=FALSE}
 ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
 
-
 ## Problem 2
+This code will evaluate problem 2 of HW_1.
+
+#### Creating Dataframe for Problem 2
+The chunk below creates a dataframe containing a sample of size 10 from a 
+random normal variable, constructs the specified logical vector, takes the 
+absolute value of each element of that sample,and produces a histogram of 
+the absolute value. The code chunk also finds the median of the sample and
+stores it for easy in-line printing.
 ```{r}
 problem_df = tibble (
   vec_numeric = rnorm(10), 
-  char_vec = c("a","b","c","d","e","f","g","h","i","j"),
-  fact_vec = factor(sample(c("Level 1", "Level 2", "Level3", 10)))
-   ) 
+  vec_logi = vec_numeric> 0, 
+  vec_char = sample (letters, 10),
+  vec_fact = factor(sample(c( "Level 1", "Level 2", "Level 3", "Level 1", "Level 2", "Level 3", "Level 1", "Level 2", "Level 3", "Level 1")))
+)
 ```
+
+
+  
+  
+
+
