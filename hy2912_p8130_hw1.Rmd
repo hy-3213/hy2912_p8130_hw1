@@ -2,7 +2,7 @@
 title: "hy2912_p8130_hw1"
 author: "Helen Yousaf"
 date: "2024-09-19"
-output: html_document
+output: github_document
 ---
 ## Problem I 
 This is code will evaluate the problem 1 of HW_1.
@@ -22,11 +22,13 @@ This data presents demographically relevant information for 344 samples of pengu
 
 #### Making Scatter Plot
 Penguin Bill Length vs. Flipper Length Scatter Plot
+
 This code chunk creates a xy scatterplot of flipper_length_mm (y) vs bill_length_mm (x). Points are colored using the species variable. 
 ```{r yx_scatter, echo=TRUE, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm,  y = flipper_length_mm, color=species)) + geom_point() 
 ```
-##### Exporting Scatter Plot
+
+#### Exporting Scatter Plot
 ```{r ggsave, echo=TRUE, warning=FALSE}
 ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
