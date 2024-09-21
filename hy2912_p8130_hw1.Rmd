@@ -40,7 +40,7 @@ This section will evaluate problem 2 of HW_1.
 The chunk below creates a dataframe containing a sample of size 10 from a 
 random normal variable, constructs the specified logical vector indicating whether elements are greater than 0. The code chunk also creates a character vector of length 10 and 
 a factor vector of length 10, with 3 different factor “levels”. 
-```{r}
+```{r, echo = TRUE}
 problem_2_df = tibble (
   vec_numeric = rnorm(10), 
   vec_logi = vec_numeric> 0, 
@@ -56,7 +56,8 @@ The mean of vec_logi is `r mean(pull(problem_2_df, vec_logi))`.
 The mean of vec_char is `r mean(pull(problem_2_df, vec_char))`.
 The mean of vec_fact is `r mean(pull(problem_2_df, vec_fact))`.
 
-Given the qualitative nature of vec_char and vec_fact, determining the mean is not avaialble (NA). These two vectors represent nominal and ordinal categorical variables, respectively. 
+Given the qualitative nature of vec_char and vec_fact, determining the mean is not avaialble (NA). These two vectors represent nominal and ordinal categorical variables, respectively and are not numeric or logical. Running the as.numeric() function for these two factors also did not yield an output. 
+
 
   
   
